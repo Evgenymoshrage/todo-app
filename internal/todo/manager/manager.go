@@ -123,3 +123,8 @@ func SetTasks(newTasks []task.Task) {
 func GetTasks() []task.Task {
 	return tasks // Возвращаю tasks для других модулей
 }
+
+// Функция для тестирования, очищающая все задачи
+func ClearTasks() {
+	tasks = []task.Task{}
+}

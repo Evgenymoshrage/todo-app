@@ -10,8 +10,6 @@ import (
 
 const mainFile = "tasks.json"
 
-// tasks := manager.GetTasks()
-
 // LoadJSON импортирует задачи из указанного JSON-файла и перезаписывает основной
 func LoadJSON(srcPath string) error {
 	// Проверка наличия файла
@@ -34,7 +32,7 @@ func LoadJSON(srcPath string) error {
 		return err
 	}
 
-	// Сохраняем в основной файл
+	// Сохраняю в основной файл
 
 	return manager.SaveToFile(mainFile)
 }
@@ -43,7 +41,7 @@ func LoadJSON(srcPath string) error {
 func SaveJSON(destPath string) error {
 
 	tasks := manager.GetTasks()
-	// Загружаем из основного файла
+	// Загружаю из основного файла
 	err := manager.LoadFromFile(mainFile)
 	if err != nil {
 		return err

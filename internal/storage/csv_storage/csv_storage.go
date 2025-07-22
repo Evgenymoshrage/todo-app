@@ -72,7 +72,7 @@ func SaveCSV(path string) error {
 	// 1. Создать или перезаписать файл
 	file, err := os.Create(path)
 	if err != nil {
-		return errors.New("не удалось создать CSV-файл: " + err.Error())
+		return errors.New("Не удалось создать CSV-файл: " + err.Error())
 	}
 	defer file.Close()
 
@@ -82,7 +82,7 @@ func SaveCSV(path string) error {
 
 	err = writer.Write([]string{"ID", "Description", "Done"})
 	if err != nil {
-		return errors.New("не удалось записать заголовок в CSV: " + err.Error())
+		return errors.New("Не удалось записать заголовок в CSV: " + err.Error())
 	}
 
 	// 3. Записать задачи
@@ -93,7 +93,7 @@ func SaveCSV(path string) error {
 			strconv.FormatBool(t.Done),
 		}
 		if err := writer.Write(record); err != nil {
-			return errors.New("ошибка записи строки в CSV: " + err.Error())
+			return errors.New("Ошибка записи строки в CSV: " + err.Error())
 		}
 	}
 
@@ -101,7 +101,7 @@ func SaveCSV(path string) error {
 	writer.Flush()
 
 	if err := writer.Error(); err != nil {
-		return errors.New("ошибка при завершении записи CSV: " + err.Error())
+		return errors.New("Ошибка при завершении записи CSV: " + err.Error())
 	}
 
 	return nil
