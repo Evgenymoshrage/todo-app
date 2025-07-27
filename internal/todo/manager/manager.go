@@ -128,3 +128,24 @@ func GetTasks() []task.Task {
 func ClearTasks() {
 	tasks = []task.Task{}
 }
+
+func PrintHelp() { // Функция выводит список доступных команд
+	fmt.Println(`ToDo App — Командный интерфейс
+
+Использование:
+  todo <команда> [опции]
+
+Доступные команды:
+  add       --desc="Описание"          Добавить задачу
+  list      --filter=all|done|pending  Показать задачи с фильтром
+  complete  --id=1                     Отметить задачу выполненной
+  delete    --id=1                     Удалить задачу
+  import    --file=name --format=csv|json  Импорт задач
+  export    --file=name --format=csv|json  Экспорт задач
+
+Примеры:
+  todo add --desc="Купить хлеб"
+  todo list --filter=pending
+  todo export --file=backup.json --format=json
+`)
+}
