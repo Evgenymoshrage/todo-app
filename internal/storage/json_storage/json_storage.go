@@ -32,8 +32,8 @@ func LoadJSON(srcPath string) error {
 		return err
 	}
 
-	// Сохраняю в основной файл
-
+	// Передаю задачи в менеджер и сохраняю
+	manager.SetTasks(imported)
 	return manager.SaveToFile(mainFile)
 }
 
